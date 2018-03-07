@@ -34,6 +34,11 @@ Navigate to the following URLS to test:
 * http://localhost:8080/WebAPI/source/sources
 * http://localhost:8080/WebAPI/vocabulary/search/cardiomyopathy
 
+### API Documentation
+
+See [here](http://webapidoc.ohdsi.org/job/WebAPI/WebAPI_Miredot_Documentation/)
+for the WebAPI documentation.
+
 ## Details
 
 The Docker image is built on [Docker
