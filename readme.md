@@ -1,5 +1,18 @@
 ![OHDSI](https://www.ohdsi.org/wp-content/uploads/2015/02/h243-ohdsi-logo-with-text.png)
 
+<div align="center">
+  <h3>[
+    <a href="https://github.com/uwcarg/ohdsi-contrib-docker#webapi">
+      WebAPI
+    </a>
+    <span> | </span>
+    <a href="https://github.com/uwcarg/ohdsi-contrib-docker#atlas">
+      Atlas
+  </a>
+  ]</h3>
+</div>
+
+
 # OHDSI Dockerfiles
 
 The respository contains Dockerfiles to set up the various OHDSI tools.
@@ -39,6 +52,34 @@ Navigate to the following URLS to test:
 * http://localhost:8080/WebAPI/vocabulary/search/cardiomyopathy
 
 [README ≫](WebAPI)
+
+
+## Atlas
+
+[ATLAS](https://github.com/OHDSI/Atlas) is an open source software tool for
+researchers to conduct scientific analyses on standardized observational data.
+
+### Quickstart
+
+Use the following command to spin up Atlas. Make sure to change the values
+of the environment variables as needed. Atlas depends on the OHDSI WebAPI,
+so you will need to have that up and running.
+
+```
+docker run \
+  --name ohdsi-atlas \
+  -p 8081:80 \
+  -e "WEBAPIURL=http://localhost:8080/WebAPI/" \
+  -e "ORGNAME=Momcorp" \
+  uwcarg/ohdsi-atlas:2.3.0
+```
+
+### Test
+
+Navigate to the following URL:
+* http://localhost:8081/
+
+[README ≫](Atlas)
 
 ## License
 
