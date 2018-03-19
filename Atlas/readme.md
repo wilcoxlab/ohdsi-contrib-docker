@@ -1,4 +1,6 @@
-![OHDSI](https://www.ohdsi.org/wp-content/uploads/2015/02/h243-ohdsi-logo-with-text.png)
+<br/><br/><br/>
+![UW](https://user-images.githubusercontent.com/668093/37624743-79bae716-2b86-11e8-879d-70a61cc623c6.png)
+<br/><br/><br/>
 
 # Atlas Dockerfiles
 

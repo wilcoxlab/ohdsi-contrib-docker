@@ -1,4 +1,6 @@
-![OHDSI](https://www.ohdsi.org/wp-content/uploads/2015/02/h243-ohdsi-logo-with-text.png)
+<br/><br/><br/>
+![UW](https://user-images.githubusercontent.com/668093/37624743-79bae716-2b86-11e8-879d-70a61cc623c6.png)
+<br/><br/><br/>
 
 <div align="center">
   <h3>[
@@ -8,14 +10,18 @@
     <span> | </span>
     <a href="https://github.com/uwcarg/ohdsi-contrib-docker#atlas">
       Atlas
-  </a>
+    </a>
+    <span> | </span>
+    <a href="https://github.com/uwcarg/ohdsi-contrib-docker#achilles">
+      Achilles
+    </a>
   ]</h3>
 </div>
 
 
 # OHDSI Dockerfiles
 
-The respository contains Dockerfiles to set up the various OHDSI tools.
+The respository contains Dockerfiles to set up various OHDSI tools.
 
 ## WebAPI
 
@@ -80,6 +86,36 @@ Navigate to the following URL:
 * http://localhost:8081/
 
 [README ≫](Atlas)
+
+## Achilles
+
+Automated Characterization of Health Information at Large-scale Longitudinal
+Evidence Systems ([ACHILLES](https://github.com/OHDSI/Achilles)) - descriptive
+statistics about a OMOP CDM database.
+
+## Quickstart
+
+Use the following command to spin up Atlas. Make sure to change the values
+of the environment variables as needed. In the example below the database
+username and password are represented by `postgres:s3cret`. Data will be read
+from `ACHILLES_CDM_SCHEMA` and `ACHILLES_VOCAB_SCHEMA`, and the results will
+be written to `ACHILLES_RES_SCHEMA`.
+
+```
+docker run \
+  --rm \
+  --net=host \
+  -v "$(pwd)"/output:/opt/app/output \
+  -e "ACHILLES_SOURCE=Docker Default" \
+  -e "ACHILLES_DB_URI=postgresql://postgres:s3cret@localhost:5432/cdm" \
+  -e "ACHILLES_CDM_SCHEMA=public" \
+  -e "ACHILLES_VOCAB_SCHEMA=public" \
+  -e "ACHILLES_RES_SCHEMA=webapi" \
+  -e "ACHILLES_CDM_VERSION=5" \
+  uwcarg/ohdsi-achilles:1.5.0
+```
+
+[README ≫](Achilles)
 
 ## License
 
