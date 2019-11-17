@@ -24,7 +24,7 @@ docker run \
   -e "DBADMINPASS=s3cret" \
   -e "DBCDMSCHEMA=public" \
   -e "DBWEBAPISCHEMA=webapi" \
-  uwcarg/ohdsi-webapi:2.3.0-postgres
+  uwcarg/ohdsi-webapi:2.6.0-postgres
 ```
 
 :bulb: `docker.for.mac.host.internal` is a magic constant in Docker for macOS
