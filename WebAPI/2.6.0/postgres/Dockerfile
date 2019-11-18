@@ -20,6 +20,7 @@ RUN rm -rf /usr/local/tomcat/webapps/*
 
 COPY --from=builder /tmp/ohdsi/webapi/target/WebAPI  /usr/local/tomcat/webapps/WebAPI
 
+COPY catalina.properties /usr/local/tomcat/conf/catalina.properties
 COPY entrypoint.sh /entrypoint.sh
 COPY V1.0.5.0.1__Install_default_source.sql /V1.0.5.0.1__Install_default_source.sql
 
@@ -28,7 +29,8 @@ ENV DBPORT 5432
 ENV DBNAME OHDSI
 ENV DBUSER ohdsi_app_user
 ENV DBPASS app1
-ENV DBCDMSCHEMA ohdsi
+ENV DBCDMSCHEMA cdm
+ENV DBVOCABSCHEMA vocab
 ENV DBWEBAPISCHEMA webapi
 ENV DBADMINUSER ohdsi_admin_user
 ENV DBADMINPASS !PASSWORD!

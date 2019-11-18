@@ -23,6 +23,7 @@ docker run \
   -e "DBADMINUSER=postgres" \
   -e "DBADMINPASS=s3cret" \
   -e "DBCDMSCHEMA=public" \
+  -e "DBVOCABSCHEMA=vocab" \
   -e "DBWEBAPISCHEMA=webapi" \
   uwcarg/ohdsi-webapi:2.6.0-postgres
 ```
@@ -83,9 +84,13 @@ A database user with read access to the CDM schema.
 
 Password for the above user.
 
-> **DBCDMSCHEMA** [default: ohdsi]
+> **DBCDMSCHEMA** [default: cdm]
 
 The name of the OMOP CDM schema.
+
+> **DBVOCABSCHEMA** [default: vocab]
+
+The name of the vocabulary schema. Sometimes the same as the cdm schema.
 
 > **DBWEBAPISCHEMA** [default: webapi]
 
