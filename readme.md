@@ -96,7 +96,7 @@ statistics about a OMOP CDM database.
 
 ## Quickstart
 
-Use the following command to spin up Atlas. Make sure to change the values
+Use the following command to spin up Achilles. Make sure to change the values
 of the environment variables as needed. In the example below the database
 username and password are represented by `postgres:s3cret`. Data will be read
 from `ACHILLES_CDM_SCHEMA` and `ACHILLES_VOCAB_SCHEMA`, and the results will
